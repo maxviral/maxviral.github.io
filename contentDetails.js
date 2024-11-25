@@ -3,12 +3,10 @@ console.clear();
 let id = location.search.split('?')[1];
 console.log(id);
 
-
 if (document.cookie.indexOf(',counter=') >= 0) {
     let counter = document.cookie.split(',')[1].split('=')[1];
     document.getElementById("badge").innerHTML = counter;
 }
-
 
 function dynamicContentDetails(ob) {
     let mainContainer = document.createElement('div');
@@ -92,8 +90,10 @@ function dynamicContentDetails(ob) {
 
     mainContainer.appendChild(imageSectionDiv);
     mainContainer.appendChild(productDetailsDiv);
-}
 
+    // Update the document title here after the product details are loaded
+    document.title = ob.name + " | E-COMMERCE WEBSITE BY EDYODA";
+}
 
 let httpRequest = new XMLHttpRequest();
 
@@ -105,6 +105,8 @@ httpRequest.onreadystatechange = function() {
         // Cari produk berdasarkan id yang diambil dari URL
         let product = contentDetails.find(item => item.id === id);
         if (product) {
+            // Update the document title before calling dynamicContentDetails
+            document.title = product.name + " | E-COMMERCE WEBSITE BY EDYODA"; // Set the title here
             dynamicContentDetails(product); 
         } else {
             console.log('Product not found');
@@ -113,7 +115,6 @@ httpRequest.onreadystatechange = function() {
         console.log('not connected!');
     }
 };
-
 
 httpRequest.open('GET', 'https://maxviral.pages.dev/product.json', true);
 httpRequest.send();
