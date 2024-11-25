@@ -3,13 +3,13 @@ console.clear();
 let id = location.search.split('?')[1];
 console.log(id);
 
-// Menampilkan counter jika ada cookie
+
 if (document.cookie.indexOf(',counter=') >= 0) {
     let counter = document.cookie.split(',')[1].split('=')[1];
     document.getElementById("badge").innerHTML = counter;
 }
 
-// Fungsi untuk menampilkan detail produk
+
 function dynamicContentDetails(ob) {
     let mainContainer = document.createElement('div');
     mainContainer.id = 'containerD';
@@ -94,7 +94,7 @@ function dynamicContentDetails(ob) {
     mainContainer.appendChild(productDetailsDiv);
 }
 
-// Backend Request (Ambil seluruh data produk)
+
 let httpRequest = new XMLHttpRequest();
 
 httpRequest.onreadystatechange = function() {
@@ -105,7 +105,7 @@ httpRequest.onreadystatechange = function() {
         // Cari produk berdasarkan id yang diambil dari URL
         let product = contentDetails.find(item => item.id === id);
         if (product) {
-            dynamicContentDetails(product); // Panggil fungsi untuk menampilkan detail produk
+            dynamicContentDetails(product); 
         } else {
             console.log('Product not found');
         }
@@ -114,6 +114,6 @@ httpRequest.onreadystatechange = function() {
     }
 };
 
-// Ambil semua produk dari product.json
+
 httpRequest.open('GET', 'https://maxviral.pages.dev/product.json', true);
 httpRequest.send();
