@@ -69,7 +69,7 @@ function dynamicContentDetails(ob) {
     linkTag1.rel = "nofollow";
     
     let buttonTag1 = document.createElement('button');
-    buttonTag1.textContent = 'Add to Cart 1';
+    buttonTag1.textContent = 'Watch Here Video';
     buttonTag1.onclick = function() {
         let order = id + " ";
         let counter = 1;
@@ -97,7 +97,7 @@ function dynamicContentDetails(ob) {
     linkTag2.rel = "nofollow";
     
     let buttonTag2 = document.createElement('button');
-    buttonTag2.textContent = 'Add to Cart 2';
+    buttonTag2.textContent = 'Download Here Video';
     buttonTag2.onclick = function() {
         let order = id + " ";
         let counter = 1;
