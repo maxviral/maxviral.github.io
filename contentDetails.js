@@ -66,7 +66,8 @@ function dynamicContentDetails(ob) {
     let linkTag1 = document.createElement('a');
     linkTag1.href = "https://www.example1.com/";  // Ganti dengan URL yang sesuai
     linkTag1.target = "_blank"; // Membuka link di tab baru
-
+    linkTag1.rel = "nofollow";
+    
     let buttonTag1 = document.createElement('button');
     buttonTag1.textContent = 'Add to Cart 1';
     buttonTag1.onclick = function() {
@@ -91,9 +92,10 @@ function dynamicContentDetails(ob) {
 
     // Tombol Add to Cart 2
     let linkTag2 = document.createElement('a');
-    linkTag2.href = "https://www.example2.com/";  // Ganti dengan URL yang sesuai
-    linkTag2.target = "_blank"; // Membuka link di tab baru
-
+    linkTag2.href = "https://www.example2.com/";  
+    linkTag2.target = "_blank"; 
+    linkTag2.rel = "nofollow";
+    
     let buttonTag2 = document.createElement('button');
     buttonTag2.textContent = 'Add to Cart 2';
     buttonTag2.onclick = function() {
