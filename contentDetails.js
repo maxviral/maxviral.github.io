@@ -143,5 +143,5 @@ let httpRequest = new XMLHttpRequest()
     }
 }
 
-httpRequest.open('GET', 'https://maxviral.pages.dev/product.json'+id, true)
+httpRequest.open('GET', 'https://maxviral.pages.dev/product.json/'+id, true)
 httpRequest.send()  
