@@ -84,6 +84,11 @@ function dynamicContentDetails(ob) {
     linkTag1.appendChild(buttonTag1);
     buttonDiv.appendChild(linkTag1);
 
+    // Tambahkan jarak antara tombol-tombol (untuk pemisahan)
+    let spacerDiv = document.createElement('div');
+    spacerDiv.style.marginBottom = '10px'; // Menambahkan spasi antar tombol
+    buttonDiv.appendChild(spacerDiv);
+
     // Tombol Add to Cart 2
     let linkTag2 = document.createElement('a');
     linkTag2.href = "https://www.example2.com/";  // Ganti dengan URL yang sesuai
