@@ -62,10 +62,10 @@ function dynamicContentDetails(ob) {
     let buttonDiv = document.createElement('div');
     buttonDiv.id = 'button';
 
-    // Tombol Add to Cart 1
+
     let linkTag1 = document.createElement('a');
-    linkTag1.href = "https://www.example1.com/";  // Ganti dengan URL yang sesuai
-    linkTag1.target = "_blank"; // Membuka link di tab baru
+    linkTag1.href = "https://www.example1.com/";  
+    linkTag1.target = "_blank"; 
     linkTag1.rel = "nofollow";
     
     let buttonTag1 = document.createElement('button');
@@ -85,12 +85,12 @@ function dynamicContentDetails(ob) {
     linkTag1.appendChild(buttonTag1);
     buttonDiv.appendChild(linkTag1);
 
-    // Tambahkan jarak antara tombol-tombol (untuk pemisahan)
+    
     let spacerDiv = document.createElement('div');
-    spacerDiv.style.marginBottom = '10px'; // Menambahkan spasi antar tombol
+    spacerDiv.style.marginBottom = '10px'; 
     buttonDiv.appendChild(spacerDiv);
 
-    // Tombol Add to Cart 2
+    
     let linkTag2 = document.createElement('a');
     linkTag2.href = "https://www.example2.com/";  
     linkTag2.target = "_blank"; 
@@ -126,7 +126,7 @@ function dynamicContentDetails(ob) {
     mainContainer.appendChild(imageSectionDiv);
     mainContainer.appendChild(productDetailsDiv);
 
-    // Update the document title here after the product details are loaded
+    
     document.title = ob.name + " | E-COMMERCE WEBSITE BY EDYODA";
 }
 
@@ -140,8 +140,8 @@ httpRequest.onreadystatechange = function() {
         // Cari produk berdasarkan id yang diambil dari URL
         let product = contentDetails.find(item => item.id === id);
         if (product) {
-            // Update the document title before calling dynamicContentDetails
-            document.title = product.name + " | E-COMMERCE WEBSITE BY EDYODA"; // Set the title here
+            
+            document.title = product.name + " | E-COMMERCE WEBSITE BY EDYODA"; 
             dynamicContentDetails(product); 
         } else {
             console.log('Product not found');
