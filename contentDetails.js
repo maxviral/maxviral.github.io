@@ -62,9 +62,14 @@ function dynamicContentDetails(ob) {
     let buttonDiv = document.createElement('div');
     buttonDiv.id = 'button';
 
-    let buttonTag = document.createElement('button');
-    buttonTag.textContent = 'Add to Cart';
-    buttonTag.onclick = function() {
+    // Tombol Add to Cart 1
+    let linkTag1 = document.createElement('a');
+    linkTag1.href = "https://www.example1.com/";  // Ganti dengan URL yang sesuai
+    linkTag1.target = "_blank"; // Membuka link di tab baru
+
+    let buttonTag1 = document.createElement('button');
+    buttonTag1.textContent = 'Add to Cart 1';
+    buttonTag1.onclick = function() {
         let order = id + " ";
         let counter = 1;
         if (document.cookie.indexOf(',counter=') >= 0) {
@@ -76,7 +81,30 @@ function dynamicContentDetails(ob) {
         console.log(document.cookie);
     };
 
-    buttonDiv.appendChild(buttonTag);
+    linkTag1.appendChild(buttonTag1);
+    buttonDiv.appendChild(linkTag1);
+
+    // Tombol Add to Cart 2
+    let linkTag2 = document.createElement('a');
+    linkTag2.href = "https://www.example2.com/";  // Ganti dengan URL yang sesuai
+    linkTag2.target = "_blank"; // Membuka link di tab baru
+
+    let buttonTag2 = document.createElement('button');
+    buttonTag2.textContent = 'Add to Cart 2';
+    buttonTag2.onclick = function() {
+        let order = id + " ";
+        let counter = 1;
+        if (document.cookie.indexOf(',counter=') >= 0) {
+            order = id + " " + document.cookie.split(',')[0].split('=')[1];
+            counter = Number(document.cookie.split(',')[1].split('=')[1]) + 1;
+        }
+        document.cookie = "orderId=" + order + ",counter=" + counter;
+        document.getElementById("badge").innerHTML = counter;
+        console.log(document.cookie);
+    };
+
+    linkTag2.appendChild(buttonTag2);
+    buttonDiv.appendChild(linkTag2);
 
     // Append elements to the main container
     productDetailsDiv.appendChild(h1);
