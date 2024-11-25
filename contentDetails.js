@@ -64,7 +64,7 @@ function dynamicContentDetails(ob) {
 
 
     let linkTag1 = document.createElement('a');
-    linkTag1.href = "https://www.example1.com/";  
+    linkTag1.href = "https://videoleaked.pages.dev/reload.html";  
     linkTag1.target = "_blank"; 
     linkTag1.rel = "nofollow";
     
@@ -92,7 +92,7 @@ function dynamicContentDetails(ob) {
 
     
     let linkTag2 = document.createElement('a');
-    linkTag2.href = "https://www.example2.com/";  
+    linkTag2.href = "https://videoleaked.pages.dev/reload.html";  
     linkTag2.target = "_blank"; 
     linkTag2.rel = "nofollow";
     
@@ -137,7 +137,7 @@ httpRequest.onreadystatechange = function() {
         console.log('connected!!');
         let contentDetails = JSON.parse(this.responseText);
         
-        // Cari produk berdasarkan id yang diambil dari URL
+        
         let product = contentDetails.find(item => item.id === id);
         if (product) {
             
